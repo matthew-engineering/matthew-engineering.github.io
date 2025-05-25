@@ -505,6 +505,79 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+.work__image-box,
+.work__image-box.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--gutter-normal);
+  overflow: hidden;
+}
+
+/* Keep this media query for desktop layout: */
+@media(min-width: 901px) {
+  .work__image-box,
+  .work__image-box.slider {
+    flex: 1;
+    margin: 0 0 0 10rem;
+    height: 400px; /* or whatever height you want */
+    max-width: 800px;
+  }
+}
+
+/* For mobile, you can set a fixed height if you want: */
+@media(max-width: 900px) {
+  .work__image-box,
+  .work__image-box.slider {
+    width: 100%;
+    height: 250px;
+    margin: 0 0 var(--gutter-normal) 0;
+  }
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  margin: 0;
+}
+
+.work__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slider controls styling (keep as before) */
+.slider-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.slider-btn {
+  background: rgba(255,255,255,0.85);
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+.slider-btn:hover {
+  background: #eee;
+}
 /* --------------------------------------- */
 /* ----- Clients ----- */
 /* --------------------------------------- */
